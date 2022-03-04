@@ -9,9 +9,11 @@
   
 <body>
 
-<input type="file" onchange="onImageChange(event)"/>
+<input type="file" name="" id="fileId" onchange="onImageChange(event)"/>
 
 <pre id="result"></pre>
+  
+<br> <button onclick="button()">Button</button>
 
 <img id="preview" src="">
  
@@ -71,6 +73,8 @@ function convertArray(array) {
 
 <script>
 
+
+var API_URL = "https://icons.iconarchive.com/icons/alex-t/fresh-fruit/128/apple-icon.png";
 /*
 axios.get(API_URL, { responseType: "blob" }).then(resp => {
   const url = URL.createObjectURL(resp.data);
@@ -82,8 +86,61 @@ fetch(API_URL)
   .then(blob => {
     const url = URL.createObjectURL(blob);
     document.getElementById("preview").src = url;
-  });
+  }); 
 
+</script>
+
+
+<script>
+  
+let base64String = ""; 
+
+var url1 ;
+
+function button() { 
+
+    var file = document.querySelector( 
+
+        'input[type=file]')['files'][0]; 
+
+  
+
+    var reader = new FileReader(); 
+
+    console.log("next"); 
+
+      
+
+    reader.onload = function () {  url1 = reader.result;   alert(url);
+
+        base64String = reader.result.replace("data:", "") 
+
+            .replace(/^.+,/, "");    
+
+  
+
+        imageBase64Stringsep = base64String; 
+
+  
+
+        alert(imageBase64Stringsep); 
+
+        console.log(base64String); 
+
+    } 
+
+    reader.readAsDataURL(file); 
+} 
+
+  
+
+function displayString() { 
+
+    console.log("Base64String about to be printed"); 
+
+    alert(base64String); 
+}
+  
 </script>
     
 </body>
