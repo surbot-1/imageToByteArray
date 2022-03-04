@@ -9,7 +9,7 @@
   
 <body>
 
-<input type="file" name="" id="fileId" onchange="onImageChange(event)"/>
+<input type="file" name="" id="file" onchange="onImageChange(event)"/>
 
 <pre id="result"></pre>
   
@@ -99,9 +99,9 @@ var url1 ;
 
 function button() { 
 
-    var file = document.querySelector( 
+    var file = document.querySelector('file').files[0];
 
-        'input[type=file]')['files'][0]; 
+       // 'input[type=file]')['files'][0]; 
 
   
 
