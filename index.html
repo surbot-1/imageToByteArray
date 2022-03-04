@@ -1,7 +1,20 @@
+<!DOCTYPE html>
+
+<html lang=”en”>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+</head>
+  
+<body>
+
 <input type="file" onchange="onImageChange(event)"/>
 
 <pre id="result"></pre>
 
+<img id="preview" src="">
+ 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <script>
@@ -54,3 +67,24 @@ function convertArray(array) {
 }
 
 </script>
+
+
+<script>
+
+/*
+axios.get(API_URL, { responseType: "blob" }).then(resp => {
+  const url = URL.createObjectURL(resp.data);
+  document.getElementById("preview").src = url;
+}); */
+
+fetch(API_URL)
+  .then(resp => resp.data.blob())
+  .then(blob => {
+    const url = URL.createObjectURL(blob);
+    document.getElementById("preview").src = url;
+  });
+
+</script>
+    
+</body>
+</html>
