@@ -14,13 +14,16 @@
 <pre id="result"></pre>
   
 <br> <button onclick="button()">Button</button>
+     <br> <button onclick="button2()">Button2</button>
+     <br> <button onclick="button3()">Button3</button>
+     <br> <button onclick="button4()">Button4</button>
 
 <img id="preview" src="">
  
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <script>
-
+alert('1');
 function onImageChange(event) {
     const imageFile = URL.createObjectURL(event.target.files[0]);
     createImage(imageFile, convertImage);
@@ -73,7 +76,7 @@ function convertArray(array) {
 
 <script>
 
-
+alert('2');
  var url2 = "https://icons.iconarchive.com/icons/alex-t/fresh-fruit/128/apple-icon.png";
 /*
 axios.get(API_URL, { responseType: "blob" }).then(resp => {
@@ -92,7 +95,7 @@ fetch(url2)
 
 
 <script>
-  
+  alert('3');
 let base64String = ""; 
 
 var url1 ;
